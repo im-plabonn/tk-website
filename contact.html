@@ -1,190 +1,101 @@
-<div class="formbold-main-wrapper">
-  <!-- Author: FormBold Team -->
-  <!-- Learn More: https://formbold.com -->
-  <div class="formbold-form-wrapper">
-    <form action="https://formbold.com/s/FORM_ID" method="POST">
-        <div class="formbold-steps">
-            <ul>
-                <li class="formbold-step-menu1 active">
-                    <span>1</span>
-                    Sign Up
-                </li>
-                <li class="formbold-step-menu2">
-                    <span>2</span>
-                    Message
-                </li>
-                <li class="formbold-step-menu3">
-                    <span>3</span>
-                    Confirm
-                </li>
-            </ul>
-        </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Multi-step Form - CoDe Counter</title>
 
-        <div class="formbold-form-step-1 active">
-          <div class="formbold-input-flex">
-            <div>
-                <label for="firstname" class="formbold-form-label"> First name </label>
-                <input
-                type="text"
-                name="firstname"
-                placeholder="Andrio"
-                id="firstname"
-                class="formbold-form-input"
-                />
-            </div>
-            <div>
-                <label for="lastname" class="formbold-form-label"> Last name </label>
-                <input
-                type="text"
-                name="lastname"
-                placeholder="Dolee"
-                id="lastname"
-                class="formbold-form-input"
-                />
-            </div>
-          </div>
-  
-          <div class="formbold-input-flex">
-              <div>
-                  <label for="dob" class="formbold-form-label"> Date of Birth </label>
-                  <input 
-                  type="date" 
-                  name="dob" 
-                  id="dob" 
-                  class="formbold-form-input"
-                  />
-              </div>
-              <div>
-                  <label for="email" class="formbold-form-label"> Email Address </label>
-                  <input
-                  type="email"
-                  name="email"
-                  placeholder="example@mail.com"
-                  id="email"
-                  class="formbold-form-input"
-                  />
-              </div>
-          </div>
-  
-          <div>
-              <label for="address" class="formbold-form-label"> Address </label>
-              <input
-              type="text"
-              name="address"
-              id="address"
-              placeholder="Flat 4, 24 Castle Street, Perth, PH1 3JY"
-              class="formbold-form-input"
-              />
-          </div>
-        </div>
-
-        <div class="formbold-form-step-2">
-          <div>
-            <label for="message" class="formbold-form-label"> Message </label>
-            <textarea
-              rows="6"
-              name="message"
-              id="message"
-              placeholder="Type your message"
-              class="formbold-form-input"
-            ></textarea>
-          </div>
-        </div>
-
-        <div class="formbold-form-step-3">
-          <div class="formbold-form-confirm">
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
-            </p>
-
-            <div>
-              <button class="formbold-confirm-btn active">
-                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="11" cy="11" r="10.5" fill="white" stroke="#DDE3EC"/>
-                <g clip-path="url(#clip0_1667_1314)">
-                <path d="M9.83343 12.8509L15.1954 7.48828L16.0208 8.31311L9.83343 14.5005L6.12109 10.7882L6.94593 9.96336L9.83343 12.8509Z" fill="#536387"/>
-                </g>
-                <defs>
-                <clipPath id="clip0_1667_1314">
-                <rect width="14" height="14" fill="white" transform="translate(4 4)"/>
-                </clipPath>
-                </defs>
-                </svg>
-                Yes! I want it.
-              </button>
-
-              <button class="formbold-confirm-btn">
-                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="11" cy="11" r="10.5" fill="white" stroke="#DDE3EC"/>
-                <g clip-path="url(#clip0_1667_1314)">
-                <path d="M9.83343 12.8509L15.1954 7.48828L16.0208 8.31311L9.83343 14.5005L6.12109 10.7882L6.94593 9.96336L9.83343 12.8509Z" fill="#536387"/>
-                </g>
-                <defs>
-                <clipPath id="clip0_1667_1314">
-                <rect width="14" height="14" fill="white" transform="translate(4 4)"/>
-                </clipPath>
-                </defs>
-                </svg>
-                No! I don’t want it.
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div class="formbold-form-btn-wrapper">
-          <button class="formbold-back-btn">
-            Back
-          </button>
-
-          <button class="formbold-btn">
-              Next Step
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <g clip-path="url(#clip0_1675_1807)">
-              <path d="M10.7814 7.33312L7.20541 3.75712L8.14808 2.81445L13.3334 7.99979L8.14808 13.1851L7.20541 12.2425L10.7814 8.66645H2.66675V7.33312H10.7814Z" fill="white"/>
-              </g>
-              <defs>
-              <clipPath id="clip0_1675_1807">
-              <rect width="16" height="16" fill="white"/>
-              </clipPath>
-              </defs>
-              </svg>
-          </button>
-        </div>
-    </form>
-  </div>
-</div>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+  /* Reset */
   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
+
   body {
     font-family: "Inter", sans-serif;
+    background-color: #f9fafb;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-top: 70px; /* navbar height */
   }
+
+  /* Navbar */
+  nav {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 70px;
+    background-color: #000000;
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+    z-index: 1000;
+  }
+
+  .logo img {
+    height: 40px;
+    flex-shrink: 0;
+  }
+
+  .nav-menu {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+  }
+
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  nav ul li a:hover,
+  nav ul li a.active {
+    background-color: #00bcd4;
+    color: #000;
+  }
+
+
+  /* Form wrapper */
   .formbold-main-wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 48px;
+    padding: 48px 20px 100px; /* bottom padding so footer no overlap */
+    flex-grow: 1;
   }
 
   .formbold-form-wrapper {
-    margin: 0 auto;
     max-width: 550px;
     width: 100%;
     background: white;
+    padding: 30px 40px 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
   }
 
+  /* Steps styling */
   .formbold-steps {
     padding-bottom: 18px;
     margin-bottom: 35px;
     border-bottom: 1px solid #DDE3EC;
   }
   .formbold-steps ul {
-    padding: 0;
-    margin: 0;
     list-style: none;
     display: flex;
     gap: 40px;
@@ -212,13 +123,14 @@
     color: #536387;
   }
   .formbold-steps li.active {
-    color: #07074D;;
+    color: #07074D;
   }
   .formbold-steps li.active span {
     background: #6A64F1;
     color: #FFFFFF;
   }
 
+  /* Form inputs */
   .formbold-input-flex {
     display: flex;
     gap: 20px;
@@ -238,6 +150,7 @@
     color: #536387;
     outline: none;
     resize: none;
+    font-family: inherit;
   }
   .formbold-form-input:focus {
     border-color: #6a64f1;
@@ -252,6 +165,7 @@
     margin-bottom: 10px;
   }
 
+  /* Confirmation step */
   .formbold-form-confirm {
     border-bottom: 1px solid #DDE3EC;
     padding-bottom: 35px;
@@ -281,8 +195,6 @@
     cursor: pointer;
     padding: 10px 20px;
     transition: all .3s ease-in-out;
-  }
-  .formbold-confirm-btn {
     box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.12);
   }
   .formbold-confirm-btn.active {
@@ -290,6 +202,7 @@
     color: #FFFFFF;
   }
 
+  /* Hide steps initially */
   .formbold-form-step-1,
   .formbold-form-step-2,
   .formbold-form-step-3 {
@@ -301,6 +214,7 @@
     display: block;
   }
 
+  /* Buttons */
   .formbold-form-btn-wrapper {
     display: flex;
     align-items: center;
@@ -338,60 +252,101 @@
     box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
   }
 
+
+  /* Footer */
+  footer {
+    background-color: #111;
+    color: #eee;
+    padding: 40px 20px;
+    font-size: 0.9rem;
+    margin-top: auto;
+  }
+
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: space-between;
+  }
+
+  .footer-section {
+    flex: 1 1 220px;
+    min-width: 220px;
+  }
+
+  .footer-section h3 {
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+    color: #00bcd4;
+  }
+
+  .footer-section p,
+  .footer-section a,
+  .footer-section li {
+    color: #ccc;
+    line-height: 1.6;
+  }
+
+  .footer-section a {
+    text-decoration: none;
+    color: #ccc;
+    transition: color 0.3s ease;
+  }
+
+  .footer-section a:hover {
+    color: #00bcd4;
+  }
+
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+  }
+
+  .social-icons a {
+    color: #ccc;
+    font-size: 1.4rem;
+    transition: color 0.3s ease;
+  }
+
+  .social-icons a:hover {
+    color: #00bcd4;
+  }
+
+  /* Responsive footer */
+  @media (max-width: 768px) {
+    .footer-container {
+      flex-direction: column;
+      gap: 30px;
+      align-items: center;
+      text-align: center;
+    }
+    .footer-section {
+      min-width: auto;
+    }
+    .social-icons {
+      justify-content: center;
+    }
+  }
 </style>
-<script>
-  const stepMenuOne = document.querySelector('.formbold-step-menu1')
-  const stepMenuTwo = document.querySelector('.formbold-step-menu2')
-  const stepMenuThree = document.querySelector('.formbold-step-menu3')
 
-  const stepOne = document.querySelector('.formbold-form-step-1')
-  const stepTwo = document.querySelector('.formbold-form-step-2')
-  const stepThree = document.querySelector('.formbold-form-step-3')
+<!-- Font Awesome for social icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
-  const formSubmitBtn = document.querySelector('.formbold-btn')
-  const formBackBtn = document.querySelector('.formbold-back-btn')
+</head>
+<body>
 
-  formSubmitBtn.addEventListener("click", function(event){
-    event.preventDefault()
-    if(stepMenuOne.className == 'formbold-step-menu1 active') {
-        event.preventDefault()
-
-        stepMenuOne.classList.remove('active')
-        stepMenuTwo.classList.add('active')
-
-        stepOne.classList.remove('active')
-        stepTwo.classList.add('active')
-
-        formBackBtn.classList.add('active')
-        formBackBtn.addEventListener("click", function (event) {
-          event.preventDefault()
-
-          stepMenuOne.classList.add('active')
-          stepMenuTwo.classList.remove('active')
-
-          stepOne.classList.add('active')
-          stepTwo.classList.remove('active')
-
-          formBackBtn.classList.remove('active')
-
-        })
-
-      } else if(stepMenuTwo.className == 'formbold-step-menu2 active') {
-        event.preventDefault()
-
-        stepMenuTwo.classList.remove('active')
-        stepMenuThree.classList.add('active')
-
-        stepTwo.classList.remove('active')
-        stepThree.classList.add('active')
-
-        formBackBtn.classList.remove('active')
-        formSubmitBtn.textContent = 'Submit'
-      } else if(stepMenuThree.className == 'formbold-step-menu3 active') {
-        document.querySelector('form').submit()
-      }
-  })
-    
-
-  
-</script>
+<nav>
+  <div class="logo">
+    <img src="https://raw.githubusercontent.com/im-plabonn/tk-website/main/log.png" alt="Logo" />
+  </div>
+  <div class="nav-menu">
+    <ul>
+      <
