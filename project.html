@@ -16,6 +16,9 @@
     padding-top: 70px; /* navbar fixed height */
     background-color: #f9fafb;
     color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
   }
 
   /* Navbar */
@@ -71,6 +74,7 @@
     max-width: 1200px;
     margin: 40px auto 80px;
     padding: 0 20px;
+    flex-grow: 1; /* push footer down */
   }
 
   .projects h1 {
@@ -145,26 +149,94 @@
     color: #0097a7;
   }
 
-  /* Responsive */
+  /* Footer */
+  footer {
+    background-color: #111;
+    color: #eee;
+    padding: 40px 20px;
+    font-size: 0.9rem;
+  }
+
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: space-between;
+  }
+
+  .footer-section {
+    flex: 1 1 220px;
+    min-width: 220px;
+  }
+
+  .footer-section h3 {
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+    color: #00bcd4;
+  }
+
+  .footer-section p,
+  .footer-section a,
+  .footer-section li {
+    color: #ccc;
+    line-height: 1.6;
+  }
+
+  .footer-section a {
+    text-decoration: none;
+    color: #ccc;
+    transition: color 0.3s ease;
+  }
+
+  .footer-section a:hover {
+    color: #00bcd4;
+  }
+
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  /* Social Icons */
+  .social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+  }
+
+  .social-icons a {
+    color: #ccc;
+    font-size: 1.4rem;
+    transition: color 0.3s ease;
+  }
+
+  .social-icons a:hover {
+    color: #00bcd4;
+  }
+
+  /* Responsive Footer */
   @media (max-width: 768px) {
-    nav {
-      padding: 0 15px;
+    .footer-container {
+      flex-direction: column;
+      gap: 30px;
+      align-items: center;
+      text-align: center;
     }
-    .nav-menu {
-      justify-content: flex-start;
-      margin-left: 60px; /* leave space for logo */
+    .footer-section {
+      min-width: auto;
+    }
+    .social-icons {
+      justify-content: center;
     }
   }
 
-  @media (max-width: 480px) {
-    .project-grid {
-      grid-template-columns: 1fr;
-    }
-    nav ul {
-      gap: 15px;
-    }
-  }
 </style>
+
+<!-- Icon library for social media icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
 </head>
 <body>
 
@@ -186,7 +258,6 @@
 <section class="projects" aria-label="Our Projects">
   <h1>Our Projects</h1>
   <div class="project-grid">
-    <!-- Project 1 -->
     <article class="project-card" tabindex="0">
       <img src="https://raw.githubusercontent.com/im-plabonn/tk-website/main/1.png" alt="Project 1 Image" class="project-image" />
       <div class="project-content">
@@ -197,8 +268,6 @@
         </div>
       </div>
     </article>
-
-    <!-- Project 2 -->
     <article class="project-card" tabindex="0">
       <img src="https://raw.githubusercontent.com/im-plabonn/tk-website/main/2.png" alt="Project 2 Image" class="project-image" />
       <div class="project-content">
@@ -209,8 +278,6 @@
         </div>
       </div>
     </article>
-
-    <!-- Project 3 -->
     <article class="project-card" tabindex="0">
       <img src="https://raw.githubusercontent.com/im-plabonn/tk-website/main/3.png" alt="Project 3 Image" class="project-image" />
       <div class="project-content">
@@ -221,8 +288,6 @@
         </div>
       </div>
     </article>
-
-    <!-- Project 4 -->
     <article class="project-card" tabindex="0">
       <img src="https://raw.githubusercontent.com/im-plabonn/tk-website/main/last.png" alt="Project 4 Image" class="project-image" />
       <div class="project-content">
@@ -235,6 +300,42 @@
     </article>
   </div>
 </section>
+
+<footer>
+  <div class="footer-container">
+    <div class="footer-section about">
+      <h3>CoDe Counter</h3>
+      <p>Innovating your digital presence with smart solutions and modern technology.</p>
+      <div class="social-icons" aria-label="Social media links">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-section links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="service.html">Service</a></li>
+        <li><a href="project.html">Project</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section contact-info">
+      <h3>Contact Info</h3>
+      <p>Email: <a href="mailto:info@codecounter.com">info@codecounter.com</a></p>
+      <p>Phone: <a href="tel:+880123456789">+880 1234 56789</a></p>
+      <p>Address: Bhuiyan Mention, West Ukil Para, Feni - 3900, Bangladesh</p>
+    </div>
+  </div>
+  <div style="text-align:center; margin-top:30px; font-size:0.85rem; color:#777;">
+    &copy; 2025 CoDe Counter. All rights reserved.
+  </div>
+</footer>
 
 </body>
 </html>
