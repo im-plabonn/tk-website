@@ -8,6 +8,7 @@ body {
 	box-sizing: border-box;
 }
 nav {
+    height: 20px; 
     background-color: #000000;
     padding:0px;
 	margin: 0px;
