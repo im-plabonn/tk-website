@@ -5,81 +5,64 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Multi-step Form - CoDe Counter</title>
 
-<style>
-  /* Reset */
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+<!-- Font Awesome for Social Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
+<style>
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+  }
   body {
     font-family: "Inter", sans-serif;
-    background-color: #f9fafb;
-    color: #333;
-    min-height: 100vh;
+    background: #f9fafb;
+    padding-top: 70px;
     display: flex;
     flex-direction: column;
-    padding-top: 70px; /* navbar height */
+    min-height: 100vh;
   }
-
-  /* Navbar */
   nav {
     position: fixed;
     top: 0; left: 0;
     width: 100%;
     height: 70px;
-    background-color: #000000;
+    background-color: #000;
     display: flex;
     align-items: center;
     padding: 0 30px;
     z-index: 1000;
   }
-
   .logo img {
     height: 40px;
-    flex-shrink: 0;
   }
-
   .nav-menu {
     flex: 1;
     display: flex;
     justify-content: center;
   }
-
   nav ul {
-    list-style: none;
     display: flex;
     gap: 30px;
-    margin: 0;
-    padding: 0;
+    list-style: none;
   }
-
   nav ul li a {
     color: white;
     text-decoration: none;
+    font-weight: 600;
     padding: 8px 16px;
     border-radius: 5px;
-    font-weight: 600;
-    transition: background-color 0.3s ease, color 0.3s ease;
   }
-
   nav ul li a:hover,
   nav ul li a.active {
-    background-color: #00bcd4;
-    color: #000;
+    background: #00bcd4;
+    color: black;
   }
 
-
-  /* Form wrapper */
   .formbold-main-wrapper {
+    flex: 1;
     display: flex;
-    align-items: center;
     justify-content: center;
-    padding: 48px 20px 100px; /* bottom padding so footer no overlap */
-    flex-grow: 1;
+    padding: 48px 20px 100px;
   }
-
   .formbold-form-wrapper {
     max-width: 550px;
     width: 100%;
@@ -88,49 +71,40 @@
     border-radius: 12px;
     box-shadow: 0 8px 25px rgba(0,0,0,0.1);
   }
-
-  /* Steps styling */
   .formbold-steps {
-    padding-bottom: 18px;
     margin-bottom: 35px;
     border-bottom: 1px solid #DDE3EC;
+    padding-bottom: 18px;
   }
   .formbold-steps ul {
-    list-style: none;
     display: flex;
     gap: 40px;
+    list-style: none;
   }
   .formbold-steps li {
     display: flex;
     align-items: center;
     gap: 14px;
-    font-weight: 500;
     font-size: 16px;
-    line-height: 24px;
     color: #536387;
+    font-weight: 500;
   }
   .formbold-steps li span {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     background: #DDE3EC;
+    width: 36px; height: 36px;
     border-radius: 50%;
-    width: 36px;
-    height: 36px;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 24px;
-    color: #536387;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .formbold-steps li.active {
     color: #07074D;
   }
   .formbold-steps li.active span {
     background: #6A64F1;
-    color: #FFFFFF;
+    color: white;
   }
 
-  /* Form inputs */
   .formbold-input-flex {
     display: flex;
     gap: 20px;
@@ -142,67 +116,24 @@
   .formbold-form-input {
     width: 100%;
     padding: 13px 22px;
-    border-radius: 5px;
     border: 1px solid #DDE3EC;
-    background: #FFFFFF;
-    font-weight: 500;
+    border-radius: 5px;
+    background: white;
     font-size: 16px;
-    color: #536387;
-    outline: none;
-    resize: none;
     font-family: inherit;
+    color: #536387;
   }
   .formbold-form-input:focus {
-    border-color: #6a64f1;
-    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+    border-color: #6A64F1;
+    box-shadow: 0px 3px 8px rgba(0,0,0,0.05);
   }
   .formbold-form-label {
-    color: #07074D;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 24px;
     display: block;
     margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #07074D;
   }
-
-  /* Confirmation step */
-  .formbold-form-confirm {
-    border-bottom: 1px solid #DDE3EC;
-    padding-bottom: 35px;
-  }
-  .formbold-form-confirm p {
-    font-size: 16px;
-    line-height: 24px;
-    color: #536387;
-    margin-bottom: 22px;
-    width: 75%;
-  }
-  .formbold-form-confirm > div {
-    display: flex;
-    gap: 15px;
-  }
-
-  .formbold-confirm-btn {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    background: #FFFFFF;
-    border: 0.5px solid #DDE3EC;
-    border-radius: 5px;
-    font-size: 16px;
-    line-height: 24px;
-    color: #536387;
-    cursor: pointer;
-    padding: 10px 20px;
-    transition: all .3s ease-in-out;
-    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.12);
-  }
-  .formbold-confirm-btn.active {
-    background: #6A64F1;
-    color: #FFFFFF;
-  }
-
-  /* Hide steps initially */
   .formbold-form-step-1,
   .formbold-form-step-2,
   .formbold-form-step-3 {
@@ -214,23 +145,45 @@
     display: block;
   }
 
-  /* Buttons */
-  .formbold-form-btn-wrapper {
-    display: flex;
+  .formbold-form-confirm {
+    border-bottom: 1px solid #DDE3EC;
+    padding-bottom: 35px;
+  }
+  .formbold-form-confirm p {
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #536387;
+  }
+  .formbold-confirm-btn {
+    display: inline-flex;
     align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background: #fff;
+    border: 1px solid #DDE3EC;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  .formbold-confirm-btn.active {
+    background: #6A64F1;
+    color: white;
+  }
+
+  .formbold-form-btn-wrapper {
+    margin-top: 25px;
+    display: flex;
     justify-content: flex-end;
     gap: 25px;
-    margin-top: 25px;
   }
   .formbold-back-btn {
-    cursor: pointer;
-    background: #FFFFFF;
+    display: none;
+    background: none;
     border: none;
     color: #07074D;
-    font-weight: 500;
     font-size: 16px;
-    line-height: 24px;
-    display: none;
+    cursor: pointer;
   }
   .formbold-back-btn.active {
     display: block;
@@ -238,108 +191,57 @@
   .formbold-btn {
     display: flex;
     align-items: center;
-    gap: 5px;
-    font-size: 16px;
-    border-radius: 5px;
-    padding: 10px 25px;
-    border: none;
-    font-weight: 500;
     background-color: #6A64F1;
     color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 5px;
+    font-size: 16px;
     cursor: pointer;
   }
-  .formbold-btn:hover {
-    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
-  }
 
-
-  /* Footer */
   footer {
-    background-color: #111;
+    background: #111;
     color: #eee;
     padding: 40px 20px;
     font-size: 0.9rem;
-    margin-top: auto;
   }
-
   .footer-container {
     max-width: 1200px;
-    margin: 0 auto;
+    margin: auto;
     display: flex;
     flex-wrap: wrap;
     gap: 40px;
     justify-content: space-between;
   }
-
   .footer-section {
     flex: 1 1 220px;
-    min-width: 220px;
   }
-
   .footer-section h3 {
-    margin-bottom: 20px;
-    font-size: 1.3rem;
     color: #00bcd4;
+    margin-bottom: 20px;
   }
-
-  .footer-section p,
-  .footer-section a,
-  .footer-section li {
+  .footer-section p, .footer-section a {
     color: #ccc;
+    text-decoration: none;
     line-height: 1.6;
   }
-
-  .footer-section a {
-    text-decoration: none;
-    color: #ccc;
-    transition: color 0.3s ease;
-  }
-
-  .footer-section a:hover {
-    color: #00bcd4;
-  }
-
-  .footer-section ul {
-    list-style: none;
-    padding: 0;
-  }
-
-  .social-icons {
-    display: flex;
-    gap: 15px;
-    margin-top: 10px;
-  }
-
   .social-icons a {
     color: #ccc;
-    font-size: 1.4rem;
-    transition: color 0.3s ease;
+    font-size: 1.3rem;
+    margin-right: 10px;
   }
-
   .social-icons a:hover {
     color: #00bcd4;
   }
-
-  /* Responsive footer */
   @media (max-width: 768px) {
     .footer-container {
       flex-direction: column;
-      gap: 30px;
       align-items: center;
       text-align: center;
     }
-    .footer-section {
-      min-width: auto;
-    }
-    .social-icons {
-      justify-content: center;
-    }
   }
 </style>
-
-<!-- Font Awesome for social icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-
 </head>
 <body>
 
@@ -349,4 +251,143 @@
   </div>
   <div class="nav-menu">
     <ul>
-      <
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="service.html">Service</a></li>
+      <li><a href="project.html">Project</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="formbold-main-wrapper">
+  <div class="formbold-form-wrapper">
+    <form action="https://formbold.com/s/FORM_ID" method="POST">
+      <div class="formbold-steps">
+        <ul>
+          <li class="formbold-step-menu1 active"><span>1</span> Sign Up</li>
+          <li class="formbold-step-menu2"><span>2</span> Message</li>
+          <li class="formbold-step-menu3"><span>3</span> Confirm</li>
+        </ul>
+      </div>
+
+      <div class="formbold-form-step-1 active">
+        <div class="formbold-input-flex">
+          <div>
+            <label class="formbold-form-label">First name</label>
+            <input type="text" name="firstname" placeholder="Andrio" class="formbold-form-input" />
+          </div>
+          <div>
+            <label class="formbold-form-label">Last name</label>
+            <input type="text" name="lastname" placeholder="Dolee" class="formbold-form-input" />
+          </div>
+        </div>
+        <div class="formbold-input-flex">
+          <div>
+            <label class="formbold-form-label">Date of Birth</label>
+            <input type="date" name="dob" class="formbold-form-input" />
+          </div>
+          <div>
+            <label class="formbold-form-label">Email Address</label>
+            <input type="email" name="email" placeholder="example@mail.com" class="formbold-form-input" />
+          </div>
+        </div>
+        <div>
+          <label class="formbold-form-label">Address</label>
+          <input type="text" name="address" placeholder="Your Address" class="formbold-form-input" />
+        </div>
+      </div>
+
+      <div class="formbold-form-step-2">
+        <label class="formbold-form-label">Message</label>
+        <textarea name="message" rows="6" placeholder="Type your message" class="formbold-form-input"></textarea>
+      </div>
+
+      <div class="formbold-form-step-3">
+        <div class="formbold-form-confirm">
+          <p>Please confirm all the information is correct before submission.</p>
+          <div>
+            <button class="formbold-confirm-btn active">Yes! I want it.</button>
+            <button class="formbold-confirm-btn">No! I don’t want it.</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="formbold-form-btn-wrapper">
+        <button class="formbold-back-btn">Back</button>
+        <button class="formbold-btn">Next Step</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-container">
+    <div class="footer-section">
+      <h3>CoDe Counter</h3>
+      <p>Innovating your digital presence with modern solutions.</p>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </div>
+    <div class="footer-section">
+      <h3>Quick Links</h3>
+      <p><a href="index.html">Home</a></p>
+      <p><a href="about.html">About</a></p>
+      <p><a href="service.html">Service</a></p>
+      <p><a href="project.html">Project</a></p>
+      <p><a href="contact.html">Contact</a></p>
+    </div>
+    <div class="footer-section">
+      <h3>Contact</h3>
+      <p>Email: info@codecounter.com</p>
+      <p>Phone: +880 1234 56789</p>
+      <p>Feni, Bangladesh</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const step1 = document.querySelector('.formbold-form-step-1');
+  const step2 = document.querySelector('.formbold-form-step-2');
+  const step3 = document.querySelector('.formbold-form-step-3');
+  const btn = document.querySelector('.formbold-btn');
+  const backBtn = document.querySelector('.formbold-back-btn');
+  const menu1 = document.querySelector('.formbold-step-menu1');
+  const menu2 = document.querySelector('.formbold-step-menu2');
+  const menu3 = document.querySelector('.formbold-step-menu3');
+
+  btn.addEventListener('click', function(e){
+    e.preventDefault();
+    if(menu1.classList.contains('active')) {
+      menu1.classList.remove('active');
+      menu2.classList.add('active');
+      step1.classList.remove('active');
+      step2.classList.add('active');
+      backBtn.classList.add('active');
+    } else if(menu2.classList.contains('active')) {
+      menu2.classList.remove('active');
+      menu3.classList.add('active');
+      step2.classList.remove('active');
+      step3.classList.add('active');
+      backBtn.classList.remove('active');
+      btn.textContent = 'Submit';
+    } else {
+      document.querySelector('form').submit();
+    }
+  });
+
+  backBtn.addEventListener('click', function(e){
+    e.preventDefault();
+    menu2.classList.remove('active');
+    menu1.classList.add('active');
+    step2.classList.remove('active');
+    step1.classList.add('active');
+    backBtn.classList.remove('active');
+  });
+</script>
+
+</body>
+</html>
