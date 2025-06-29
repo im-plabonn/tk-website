@@ -562,8 +562,8 @@ body.dark-mode {
 }
 
 .profile-img {
-  width: 20px;
-  height: 20px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 1rem;
